@@ -1,0 +1,20 @@
+TypistLocal
+Copyright (c) 2026 Edouard Verbeke. All rights reserved.
+
+You may download TypistLocal and use it free of charge, on any number of
+Macs, for personal or commercial purposes.
+
+You may not sell, rent or lease TypistLocal, or distribute modified copies
+of it.
+
+TypistLocal includes open-source components (llama.cpp, CotabbyInference,
+Sparkle) under their own licenses, listed in
+TypistLocal.app/Contents/Resources/Acknowledgements.txt. The language model
+it downloads (Gemma 4 E2B) is licensed under the Apache License 2.0.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

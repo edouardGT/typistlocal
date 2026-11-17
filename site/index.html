@@ -1,0 +1,198 @@
+<!doctype html>
+<!--
+  GitHub repository: github.com/edouardGT/typistlocal
+  Every Download, Releases and Issues link on this site uses it.
+  To point all pages at another repository, run: ./set-repo.sh owner/name
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>TypistLocal: autocomplete that stays on your Mac</title>
+<meta name="description" content="Gray suggestions at your cursor as you type, in most Mac apps. The language model runs on your Mac, and nothing you type leaves it. Free.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="icon.png" alt="" width="28" height="28"><span>TypistLocal</span></a>
+    <nav aria-label="Main">
+      <a href="privacy.html">Privacy</a>
+      <a href="help.html">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-icon" src="icon.png" alt="" width="104" height="104">
+      <h1>Autocomplete that stays on your&nbsp;Mac</h1>
+      <p class="lead">As you type, a suggestion appears in gray at your cursor. A language model on your Mac writes it. Nothing you type leaves the machine.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/edouardGT/typistlocal/releases/latest/download/TypistLocal.dmg">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0-4-4m4 4 4-4M4 17h12"/></svg>
+          Download for Mac
+        </a>
+        <a class="button" href="privacy.html">How privacy works</a>
+      </div>
+      <p class="fineprint">Free. macOS 14 or later, Apple Silicon. <a href="help.html#setup">How to set it up</a></p>
+
+      <div class="demo" role="img" aria-label="Two examples. You typed “See you tomor” and the suggestion “row” follows the cursor in gray. You typed “I will send it by the end of the” and the suggestion “week” follows in gray.">
+        <div class="demo-row">
+          <span class="demo-label">Inside a word</span>
+          <p class="demo-line">See you tomor<span class="caret"></span><span class="ghost">row</span></p>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">After a word</span>
+          <p class="demo-line">I will send it by the end of the<span class="caret"></span><span class="ghost"> week</span></p>
+        </div>
+      </div>
+      <p class="demo-caption">What you typed, the cursor, then the suggestion in gray.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>Three keys</h2>
+      <p class="section-intro">Ignore a suggestion and keep typing, or take it.</p>
+      <dl class="keys">
+        <dt><kbd>Tab</kbd></dt>
+        <dd>Takes the next word. Each press takes one more.</dd>
+        <dt><kbd>⌘</kbd> <kbd>→</kbd></dt>
+        <dd>Takes the whole suggestion.</dd>
+        <dt><kbd>Esc</kbd></dt>
+        <dd>Dismisses it.</dd>
+      </dl>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Inside a word</h3>
+          <p>It offers the rest of the word. “tomor” gets “row”.</p>
+        </div>
+        <div class="card">
+          <h3>After a word</h3>
+          <p>It shows only the words the model is fairly sure of. Suggestions stay short, about two words.</p>
+        </div>
+        <div class="card">
+          <h3>At the start of a sentence</h3>
+          <p>It waits until you type the first letter. A guess there is almost never right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="where">
+    <div class="wrap">
+      <h2>Works where you write</h2>
+      <p class="section-intro">In any app whose text macOS can read through Accessibility.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Mac apps</h3>
+          <p>TextEdit, Notes and other standard text fields.</p>
+        </div>
+        <div class="card">
+          <h3>Mail</h3>
+          <p>The body of the message you are writing.</p>
+        </div>
+        <div class="card">
+          <h3>Chrome and Electron apps</h3>
+          <p>VS Code, Slack, Teams and Chrome. Words you take are typed in as keystrokes.</p>
+        </div>
+      </div>
+      <p class="section-intro after-grid">It stays out of password fields, address bars, search fields and login dialogs. It does not read them at all.</p>
+    </div>
+  </section>
+
+  <section id="private">
+    <div class="wrap">
+      <h2>Private by design</h2>
+      <p class="section-intro">The whole thing runs on your Mac.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>The model runs here</h3>
+          <p>llama.cpp runs Gemma 4 E2B on your Mac’s GPU, inside the app. There is no server.</p>
+        </div>
+        <div class="card">
+          <h3>Nothing you type leaves</h3>
+          <p>No account, no analytics, no telemetry. The privacy page lists everything it keeps and every connection it makes.</p>
+        </div>
+        <div class="card">
+          <h3>What it learns stays here</h3>
+          <p>Your writing is kept encrypted on this Mac. One menu item deletes it.</p>
+        </div>
+      </div>
+      <p class="after-grid"><a href="privacy.html">Read exactly what it reads and keeps</a></p>
+    </div>
+  </section>
+
+  <section id="context">
+    <div class="wrap">
+      <h2>Suggestions that fit the conversation</h2>
+      <p class="section-intro">Besides the text you are typing, the model on your Mac can see three things.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>The chat above</h3>
+          <p>In a chat, the messages above the box you type in. A reply can then use the words of the message it answers.</p>
+        </div>
+        <div class="card">
+          <h3>Your own writing</h3>
+          <p>Messages you sent earlier, kept encrypted. A few related ones help it get names, project words and sign-offs right.</p>
+        </div>
+        <div class="card">
+          <h3>Your notes</h3>
+          <p>Markdown files you put in a folder. Suggestions can continue with things you wrote down there.</p>
+        </div>
+      </div>
+      <p class="after-grid">You can switch off the chat context and the learning. <a href="help.html#settings">See settings</a></p>
+    </div>
+  </section>
+
+  <section id="requirements">
+    <div class="wrap">
+      <h2>Requirements</h2>
+      <ul class="checks">
+        <li>A Mac with Apple Silicon</li>
+        <li>macOS 14 Sonoma or later</li>
+        <li>About 4 GB of free disk space for the model (a 3.85 GB download, once)</li>
+        <li>Accessibility permission, which you grant in System Settings</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Try it</h2>
+      <p>Free to download and use.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/edouardGT/typistlocal/releases/latest/download/TypistLocal.dmg">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3v10m0 0-4-4m4 4 4-4M4 17h12"/></svg>
+          Download for Mac
+        </a>
+        <a class="button" href="help.html#setup">Setup guide</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Free to download and use.</p>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="help.html">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+      <a href="https://github.com/edouardGT/typistlocal/issues">Report an issue</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

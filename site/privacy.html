@@ -1,0 +1,200 @@
+<!doctype html>
+<!--
+  GitHub repository: github.com/edouardGT/typistlocal
+  Every Download, Releases and Issues link on this site uses it.
+  To point all pages at another repository, run: ./set-repo.sh owner/name
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Privacy · TypistLocal</title>
+<meta name="description" content="What the app reads, what it keeps on your Mac, and the only network connections it makes.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="icon.png" alt="" width="28" height="28"><span>TypistLocal</span></a>
+    <nav aria-label="Main">
+      <a href="privacy.html" aria-current="page">Privacy</a>
+      <a href="help.html">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+
+  <div class="page-head">
+    <div class="wrap prose">
+      <h1>Privacy</h1>
+      <p class="lead">Everything happens on your Mac. What you type is not sent anywhere. There is no account, no analytics and no telemetry.</p>
+      <p class="updated">Updated 17 November 2026</p>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#short">In short</a></li>
+        <li><a href="#reads">What it reads</a></li>
+        <li><a href="#never">What it never reads</a></li>
+        <li><a href="#keeps">What it keeps</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#contact">Questions</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="short">
+    <div class="wrap prose">
+      <h2>In short</h2>
+      <ul class="checks">
+        <li>The language model runs inside the app, on your Mac.</li>
+        <li>Nothing you type, write or keep in your notes leaves your Mac.</li>
+        <li>Password fields, address bars, search fields and login dialogs are never read.</li>
+        <li>What it keeps of your writing is encrypted, and one menu item deletes it.</li>
+        <li>No accounts, no analytics, no telemetry and no crash reporting of its own.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="reads">
+    <div class="wrap prose">
+      <h2>What it reads</h2>
+      <p>The app needs the macOS Accessibility permission. With it, while you type in a text field, it reads:</p>
+      <ul>
+        <li><strong>The text around your cursor:</strong> up to 4,000 characters before it, up to 200 after it, and any text you have selected.</li>
+        <li><strong>Where you are typing:</strong> the app’s name and the window title, such as the subject of an email.</li>
+        <li><strong>The chat above the box:</strong> in a chat, the newest 1,200 characters shown above the box you type in. It reads them again every second or two while you pause. This is on by default; <a href="help.html#settings">you can switch it off</a>.</li>
+        <li><strong>Your name</strong> as set in macOS.</li>
+        <li><strong>The keys you press,</strong> to know when you type and to take <kbd>Tab</kbd>, <kbd>⌘</kbd> <kbd>→</kbd> and <kbd>Esc</kbd> while a suggestion shows. Key presses are not saved.</li>
+        <li><strong>Your notes:</strong> the Markdown files in <code>~/TypistLocal/knowledge/</code>.</li>
+        <li><strong>The clipboard:</strong> suggestions use it only if you turn this on (it is off by default), and skip items that password managers mark as concealed. The notes panel (<kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>Space</kbd>) searches your notes with the clipboard text when the field has no text.</li>
+      </ul>
+      <p>All of this goes to the model running in the app, on your Mac, and nowhere else.</p>
+    </div>
+  </section>
+
+  <section id="never">
+    <div class="wrap prose">
+      <h2>What it never reads</h2>
+      <p><strong>Password fields.</strong> The app checks whether a field is a password field before it reads anything from it. If it is, the app stops there, so a password never enters the app, not even to be thrown away.</p>
+      <p><strong>Login dialogs, browser address bars and search fields</strong> get the same treatment. Nothing from them is read.</p>
+    </div>
+  </section>
+
+  <section id="keeps">
+    <div class="wrap prose">
+      <h2>What it keeps</h2>
+      <p>Everything the app stores stays on this Mac, in the places below.</p>
+
+      <div class="kept">
+        <div class="card">
+          <h3>Your writing</h3>
+          <p>So suggestions can use your names, project words and sign-offs.</p>
+          <dl>
+            <dt>What</dt>
+            <dd>A message when you send it or leave the field. Only the part you wrote during that visit, at least 4 words, mostly typed rather than pasted, up to 1,500 characters. At most 2,000 messages; the oldest go first.</dd>
+            <dt>Where</dt>
+            <dd><code>~/Library/<wbr>Application Support/<wbr>TypistLocal/<wbr>Writing/<wbr>writing.log</code></dd>
+            <dt>Protection</dt>
+            <dd>Each message is encrypted (AES-GCM). The key is in your login keychain as “TypistLocal writing key”. A backup or a copy of the file shows no text. Only your user account can open the file.</dd>
+            <dt>Never kept</dt>
+            <dd>Password fields, address bars, search fields, login dialogs, terminals and password managers. <a href="help.html#settings">You can add more apps.</a></dd>
+            <dt>Turn off</dt>
+            <dd>Menu bar icon → <strong>Learn From My Writing</strong>.</dd>
+            <dt>Delete</dt>
+            <dd>Menu bar icon → <strong>Forget My Writing…</strong> deletes everything kept. The key stays in your keychain until you <a href="help.html#uninstall">uninstall</a>.</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3>Your notes and their search index</h3>
+          <dl>
+            <dt>What</dt>
+            <dd>The Markdown files you put in the notes folder, and an index of them for searching. On first launch the app adds one file of examples.</dd>
+            <dt>Where</dt>
+            <dd><code>~/TypistLocal/knowledge/</code> and <code>~/TypistLocal/typist.sqlite</code></dd>
+            <dt>Protection</dt>
+            <dd>Not encrypted. The index is a copy of your own notes, rebuilt from them each time the app starts.</dd>
+            <dt>Delete</dt>
+            <dd>Delete your files. Empty <code>examples.md</code> rather than deleting it: a deleted one comes back at the next start. The index is rebuilt from what is left.</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3>The model</h3>
+          <dl>
+            <dt>What</dt>
+            <dd>The language model file, 3.85 GB. It holds nothing about you.</dd>
+            <dt>Where</dt>
+            <dd><code>~/Library/<wbr>Application Support/<wbr>TypistLocal/<wbr>Models/</code></dd>
+            <dt>Delete</dt>
+            <dd>Delete the folder. Suggestions stop until it is back.</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3>Settings</h3>
+          <dl>
+            <dt>What</dt>
+            <dd>Your choices, such as whether learning is on.</dd>
+            <dt>Where</dt>
+            <dd>macOS preferences for <code>com.coffeetableconsultancy.TypistLocal</code></dd>
+            <dt>Delete</dt>
+            <dd><code>defaults delete com.coffeetableconsultancy.TypistLocal</code></dd>
+          </dl>
+        </div>
+      </div>
+
+      <h3>No log</h3>
+      <p>The app writes no log. A diagnostic log is written only if someone starts the app with logging switched on by hand, through environment variables. That log contains what you type, so delete it after use.</p>
+    </div>
+  </section>
+
+  <section id="network">
+    <div class="wrap prose">
+      <h2>Network connections</h2>
+      <p>The app makes two network connections, and no others:</p>
+      <ol>
+        <li><strong>Model download.</strong> The setup window downloads the model once: 3.85 GB from <code>huggingface.co</code> (<a href="https://huggingface.co/mradermacher/gemma-4-E2B-i1-GGUF">mradermacher/gemma-4-E2B-i1-GGUF</a>).</li>
+        <li><strong>Update checks.</strong> The app reads an update feed hosted on GitHub and, when there is a new version, downloads it from GitHub. It asks you before it checks on its own; <strong>Check for Updates…</strong> in the menu checks at once.</li>
+      </ol>
+      <p>Neither one carries what you type, your writing or your notes. As with any download, the server sees your IP address and the file requested.</p>
+      <p>Suggestions themselves never use the network: the built-in engine runs entirely on your Mac.</p>
+
+      <h3>Optional: the Ollama engine</h3>
+      <p>If you switch to the Ollama engine, an advanced setting, the app sends its prompts to Ollama on your own Mac at <code>127.0.0.1</code>. That traffic does not leave the Mac.</p>
+
+      <h3>Accounts, analytics, telemetry</h3>
+      <p>None. The app has no sign-in, no analytics, no telemetry and no crash reporting of its own.</p>
+
+      <h3>This website</h3>
+      <p>This site sets no cookies and loads nothing from other servers: no fonts, scripts or trackers. It is hosted on GitHub Pages, and GitHub may keep its own server logs.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap prose">
+      <h2>Questions</h2>
+      <p>Ask in an <a href="https://github.com/edouardGT/typistlocal/issues">issue on GitHub</a>. To remove the app and everything it keeps, follow the <a href="help.html#uninstall">uninstall steps</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Free to download and use.</p>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="help.html">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+      <a href="https://github.com/edouardGT/typistlocal/issues">Report an issue</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<!--
+  GitHub repository: github.com/edouardGT/typistlocal
+  Every Download, Releases and Issues link on this site uses it.
+  To point all pages at another repository, run: ./set-repo.sh owner/name
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Help · TypistLocal</title>
+<meta name="description" content="Set up, use, troubleshoot and uninstall the app. Credits and licenses.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html"><img src="icon.png" alt="" width="28" height="28"><span>TypistLocal</span></a>
+    <nav aria-label="Main">
+      <a href="privacy.html">Privacy</a>
+      <a href="help.html" aria-current="page">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="doc">
+
+  <div class="page-head">
+    <div class="wrap prose">
+      <h1>Help</h1>
+      <p class="lead">Set it up, use it, fix it, remove it.</p>
+      <ul class="toc" aria-label="On this page">
+        <li><a href="#setup">Set up</a></li>
+        <li><a href="#use">Use</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#uninstall">Uninstall</a></li>
+        <li><a href="#credits">Credits and licenses</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="setup">
+    <div class="wrap prose">
+      <h2>Set up</h2>
+      <ol class="steps">
+        <li>
+          <h3>Install</h3>
+          <p><a href="https://github.com/edouardGT/typistlocal/releases/latest/download/TypistLocal.dmg">Download the disk image</a>, open it and drag the app to your Applications folder. Open it from there.</p>
+          <p>A small icon appears in the menu bar: two lines and a cursor. There is no Dock icon. Everything is in that menu.</p>
+        </li>
+        <li>
+          <h3>Allow Accessibility</h3>
+          <p>The app reads the text at your cursor through Accessibility, so it needs your permission. macOS asks the first time. If you missed it:</p>
+          <ol>
+            <li>Open <strong>System Settings → Privacy &amp; Security → Accessibility</strong>.</li>
+            <li>Turn on <strong>TypistLocal</strong>. If it is not in the list, click <strong>+</strong> and choose it in Applications.</li>
+          </ol>
+          <div class="note">
+            <p><strong>Use Privacy &amp; Security, not the other Accessibility.</strong> System Settings also has an Accessibility item of its own, for VoiceOver, Zoom and the like. That one has no switch for this app. The list you need is inside <strong>Privacy &amp; Security</strong>.</p>
+          </div>
+          <p>Shortcut: until access is granted, the first item in the app’s menu reads <strong>Allow Accessibility Access…</strong>. Choose it and the right page opens.</p>
+        </li>
+        <li>
+          <h3>Get the model</h3>
+          <p>The model is a 3.85 GB file, downloaded once from Hugging Face. The setup window that opens on first launch downloads it for you. It shows progress, picks up where it stopped if the connection drops or you quit, and checks the file before using it.</p>
+          <p>Closed the window? Click the menu bar icon and choose <strong>Set Up TypistLocal…</strong>.</p>
+          <p>When it is done, the app loads the model, which takes a few seconds, and the first line of the menu reads <strong>Model ready (gemma-4-E2B, on this Mac)</strong>.</p>
+        </li>
+        <li>
+          <h3>Try it</h3>
+          <p>Open TextEdit and type <code>See you tomor</code>. The rest of the word appears in gray at the cursor. Press <kbd>Tab</kbd> to take it.</p>
+        </li>
+        <li>
+          <h3>Opens at login</h3>
+          <p>The first time it runs from Applications, the app turns on opening at login, so suggestions are there after a restart. Turn it off with <strong>Open at Login</strong> in the menu.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="use">
+    <div class="wrap prose">
+      <h2>Use</h2>
+      <h3>Keys</h3>
+      <dl class="keys">
+        <dt><kbd>Tab</kbd></dt>
+        <dd>Takes the next word. Each press takes one more.</dd>
+        <dt><kbd>⌘</kbd> <kbd>→</kbd></dt>
+        <dd>Takes the whole suggestion.</dd>
+        <dt><kbd>Esc</kbd></dt>
+        <dd>Dismisses it.</dd>
+        <dt><kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>Space</kbd></dt>
+        <dd>Opens the notes panel. <kbd>Tab</kbd> inserts the top result.</dd>
+      </dl>
+      <p>After you take the last word of a suggestion, a <kbd>Tab</kbd> within the next second does nothing. That keeps a quick extra press from moving you to the next field.</p>
+
+      <h3>The menu</h3>
+      <ul>
+        <li><strong>Pause Inline Completion</strong> stops suggestions everywhere until you choose <strong>Resume Inline Completion</strong>.</li>
+        <li><strong>Learn From My Writing</strong> keeps messages you send, encrypted on this Mac, and uses a few related ones as examples. On by default.</li>
+        <li><strong>Forget My Writing…</strong> deletes everything kept so far. It shows how many messages are kept.</li>
+        <li><strong>Show Suggestions</strong> opens the notes panel.</li>
+        <li><strong>Reindex</strong> reads your notes again after you edit them.</li>
+        <li><strong>Open Knowledge Folder</strong> opens your notes folder in Finder.</li>
+        <li><strong>Open at Login</strong> and <strong>Quit</strong>.</li>
+      </ul>
+
+      <h3>Your notes</h3>
+      <p>Put Markdown files (<code>.md</code>) in <code>~/TypistLocal/knowledge/</code>. Separate snippets with a line of three dashes:</p>
+<pre><code># Friendly follow-up
+
+Thanks for the update. I'll check this further and come back with my findings.
+
+---
+
+# Next snippet</code></pre>
+      <p>What you are writing is used to search them, and the best matching passages go to the model as reference. Choose <strong>Reindex</strong> after you edit them.</p>
+
+      <h3>Not there yet</h3>
+      <p>There is no settings window, and no way yet to switch suggestions off in one app only. <strong>Pause</strong> works for all apps at once.</p>
+    </div>
+  </section>
+
+  <section id="settings">
+    <div class="wrap prose">
+      <h2>Settings</h2>
+      <p>Until there is a settings window, these are changed in Terminal.</p>
+
+      <h3>Stop reading the chat above the box</h3>
+<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
+  includeScreenContext -bool false</code></pre>
+
+      <h3>Let suggestions use the clipboard</h3>
+      <p>Off by default. Items that password managers mark as concealed are skipped either way.</p>
+<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
+  includeClipboard -bool true</code></pre>
+
+      <h3>Never learn from certain apps</h3>
+      <p>Terminals and password managers are always left out. To add more, list them by bundle identifier. The command replaces the previous list, so name every app each time:</p>
+<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
+  writingExcludedApps -array com.apple.Notes</code></pre>
+
+      <h3>Use another model file</h3>
+      <p>Any GGUF model file. Quit and reopen the app afterwards.</p>
+<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
+  modelPath ~/Models/other.gguf</code></pre>
+
+      <h3>Undo a setting</h3>
+<pre><code>defaults delete com.coffeetableconsultancy.TypistLocal \
+  includeScreenContext</code></pre>
+    </div>
+  </section>
+
+  <section id="troubleshooting">
+    <div class="wrap prose">
+      <h2>Troubleshooting</h2>
+
+      <h3>The menu says “Allow Accessibility Access…”</h3>
+      <p>The permission is not granted yet. Choose that item and turn the app on under <strong>Privacy &amp; Security → Accessibility</strong>. See <a href="#setup">step 2</a>.</p>
+
+      <h3>The menu says “Model missing”</h3>
+      <p>The model file is not in place. Run the command in <a href="#setup">step 3</a>, then click the menu bar icon again. The app picks the file up when the menu opens.</p>
+
+      <h3>The menu says “Model failed to load”</h3>
+      <p>The file may be incomplete. A complete one is 3,845,328,608 bytes. Check with:</p>
+<pre><code>stat -f %z ~/Library/Application\ Support/TypistLocal/Models/*.gguf</code></pre>
+      <p>If the number differs, delete the file and download it again.</p>
+
+      <h3>No gray text appears</h3>
+      <ul>
+        <li>If the menu shows <strong>Resume Inline Completion</strong>, suggestions are paused.</li>
+        <li>Right after a finished sentence, or at the start of a line, it waits for your first letter.</li>
+        <li>It only shows words the model is fairly sure of, so sometimes there is nothing to show.</li>
+        <li>Password fields, address bars, search fields and login dialogs are left alone on purpose.</li>
+        <li>Some apps do not share their text through Accessibility. It cannot work there.</li>
+      </ul>
+
+      <h3>Two suggestions at once, or <kbd>Tab</kbd> acts strangely</h3>
+      <p>Another autocomplete tool is running. Both draw gray text and both want <kbd>Tab</kbd>. Quit one of them.</p>
+
+      <h3>Mid-word suggestions in another language are off</h3>
+      <p>Add the language under <strong>System Settings → General → Language &amp; Region</strong>. The app checks unfinished words against your preferred languages.</p>
+
+      <h3>The gray text shows up in screen sharing</h3>
+      <p>It is drawn on screen like any window, so a shared screen or a recording shows it. Press <kbd>Esc</kbd> to hide it, or pause from the menu while you share.</p>
+
+      <p>Still stuck? <a href="https://github.com/edouardGT/typistlocal/issues">Open an issue on GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="uninstall">
+    <div class="wrap prose">
+      <h2>Uninstall</h2>
+      <ol class="steps">
+        <li>
+          <h3>Quit</h3>
+          <p>In the menu, turn off <strong>Open at Login</strong>, then choose <strong>Quit</strong>.</p>
+        </li>
+        <li>
+          <h3>Remove the app</h3>
+          <p>Drag it from Applications to the Trash.</p>
+        </li>
+        <li>
+          <h3>Remove what it kept</h3>
+          <p>The model and your encrypted writing:</p>
+<pre><code>rm -rf ~/Library/Application\ Support/TypistLocal</code></pre>
+          <p>The encryption key in your login keychain:</p>
+<pre><code>security delete-generic-password -s TypistLocal -a writing-key</code></pre>
+          <p>The settings:</p>
+<pre><code>defaults delete com.coffeetableconsultancy.TypistLocal</code></pre>
+          <p>Your notes folder and its search index. It holds your own notes, so keep a copy of any you want first:</p>
+<pre><code>rm -rf ~/TypistLocal</code></pre>
+        </li>
+        <li>
+          <h3>Remove the permission</h3>
+          <p>In <strong>System Settings → Privacy &amp; Security → Accessibility</strong>, select the app and click <strong>−</strong>.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="credits">
+    <div class="wrap prose">
+      <h2>Credits and licenses</h2>
+      <p>TypistLocal is free to download and use. It is built on these open-source components; their licenses are in the app, in <code>TypistLocal.app/Contents/Resources/Acknowledgements.txt</code>.</p>
+      <ul>
+        <li><a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> by the ggml authors, MIT license. Runs the model.</li>
+        <li><a href="https://github.com/FuJacob/cotabbyinference">CotabbyInference</a> by Jacob Fu, MIT license. Connects llama.cpp to the app.</li>
+        <li><a href="https://sparkle-project.org">Sparkle</a>, MIT license. Checks for and installs updates.</li>
+        <li><a href="https://ai.google.dev/gemma">Gemma 4 E2B</a> by Google, Apache 2.0 license. The language model.</li>
+        <li><a href="https://huggingface.co/mradermacher/gemma-4-E2B-i1-GGUF">GGUF quantization</a> of Gemma 4 E2B by mradermacher. The model file the app uses.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Free to download and use.</p>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="help.html">Help</a>
+      <a href="https://github.com/edouardGT/typistlocal/releases">Releases</a>
+      <a href="https://github.com/edouardGT/typistlocal/issues">Report an issue</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
