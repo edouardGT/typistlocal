@@ -425,7 +425,9 @@ main section:first-child {
   display: inline-block;
   width: 2px;
   height: 1.15em;
-  margin: 0 1px 0 2px;
+  /* Takes no room in the line, like a real cursor: the suggestion starts
+     exactly where the typed text ends ("grat|eful" reads as one word). */
+  margin: 0 -1px;
   vertical-align: -0.2em;
   background: var(--caret);
   border-radius: 1px;
