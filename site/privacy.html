@@ -35,7 +35,7 @@
     <div class="wrap prose">
       <h1>Privacy</h1>
       <p class="lead">Everything happens on your Mac. What you type is not sent anywhere. There is no account, no analytics and no telemetry.</p>
-      <p class="updated">Updated 17 November 2026</p>
+      <p class="updated">Updated 18 November 2026</p>
       <ul class="toc" aria-label="On this page">
         <li><a href="#short">In short</a></li>
         <li><a href="#reads">What it reads</a></li>
@@ -54,6 +54,8 @@
         <li>The language model runs inside the app, on your Mac.</li>
         <li>Nothing you type, write or keep in your notes leaves your Mac.</li>
         <li>Password fields, address bars, search fields and login dialogs are never read.</li>
+        <li>Apps you turn off are not read at all.</li>
+        <li>Suggestions are left out of shared screens, recordings and screenshots.</li>
         <li>What it keeps of your writing is encrypted, and one menu item deletes it.</li>
         <li>No accounts, no analytics, no telemetry and no crash reporting of its own.</li>
       </ul>
@@ -71,7 +73,7 @@
         <li><strong>Your name</strong> as set in macOS.</li>
         <li><strong>The keys you press,</strong> to know when you type and to take <kbd>Tab</kbd>, <kbd>⌘</kbd> <kbd>→</kbd> and <kbd>Esc</kbd> while a suggestion shows. Key presses are not saved.</li>
         <li><strong>Your notes:</strong> the Markdown files in <code>~/TypistLocal/knowledge/</code>.</li>
-        <li><strong>The clipboard:</strong> suggestions use it only if you turn this on (it is off by default), and skip items that password managers mark as concealed. The notes panel (<kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>Space</kbd>) searches your notes with the clipboard text when the field has no text.</li>
+        <li><strong>The clipboard:</strong> what you copied in the last 10 minutes, so a ticket number you copied can be suggested as you type it. Items that password managers mark as concealed are never read. You can turn this off in Settings. The notes panel (<kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>Space</kbd>) searches your notes with the clipboard text when the field has no text.</li>
       </ul>
       <p>All of this goes to the model running in the app, on your Mac, and nowhere else.</p>
     </div>
@@ -133,6 +135,16 @@
             <dd><code>~/Library/<wbr>Application Support/<wbr>TypistLocal/<wbr>Models/</code></dd>
             <dt>Delete</dt>
             <dd>Delete the folder. Suggestions stop until it is back.</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3>Keystrokes saved</h3>
+          <dl>
+            <dt>What</dt>
+            <dd>Two numbers for the menu: keystrokes saved today and in total. No text.</dd>
+            <dt>Where</dt>
+            <dd>macOS preferences for <code>com.coffeetableconsultancy.TypistLocal</code></dd>
           </dl>
         </div>
 

@@ -103,13 +103,16 @@
 
       <h3>The menu</h3>
       <ul>
+        <li>The second line counts the keystrokes you saved today: the letters you took with <kbd>Tab</kbd> or <kbd>⌘</kbd> <kbd>→</kbd>, minus those keys.</li>
         <li><strong>Pause Inline Completion</strong> stops suggestions everywhere until you choose <strong>Resume Inline Completion</strong>.</li>
+        <li><strong>Turn Off in …</strong> turns TypistLocal off in the app you are using: no suggestions, no learning and nothing read there. The same item turns it on again.</li>
         <li><strong>Longer Suggestions</strong> lets a suggestion go on while the model is less sure: more words, a few more of them wrong at the end. On by default.</li>
         <li><strong>Learn From My Writing</strong> keeps messages you send, encrypted on this Mac, and uses a few related ones as examples. On by default.</li>
         <li><strong>Forget My Writing…</strong> deletes everything kept so far. It shows how many messages are kept.</li>
         <li><strong>Show Suggestions</strong> opens the notes panel.</li>
         <li><strong>Reindex</strong> reads your notes again after you edit them.</li>
         <li><strong>Open Knowledge Folder</strong> opens your notes folder in Finder.</li>
+        <li><strong>Settings…</strong> opens the settings. Opening TypistLocal again while it runs, from Applications or Spotlight, does the same.</li>
         <li><strong>Open at Login</strong> and <strong>Quit</strong>.</li>
       </ul>
 
@@ -124,38 +127,30 @@ Thanks for the update. I'll check this further and come back with my findings.
 # Next snippet</code></pre>
       <p>What you are writing is used to search them, and the best matching passages go to the model as reference. Choose <strong>Reindex</strong> after you edit them.</p>
 
-      <h3>Not there yet</h3>
-      <p>There is no settings window, and no way yet to switch suggestions off in one app only. <strong>Pause</strong> works for all apps at once.</p>
+      <h3>Copied a ticket?</h3>
+      <p>Copy something, start typing it, and the suggestion has the rest: copy “PBI-3523 Lower share after the migration”, type “I'm picking up PBI-” and it suggests “3523”. Only what you copied in the last 10 minutes is used.</p>
     </div>
   </section>
 
   <section id="settings">
     <div class="wrap prose">
       <h2>Settings</h2>
-      <p>Until there is a settings window, these are changed in Terminal.</p>
-
-      <h3>Stop reading the chat above the box</h3>
-<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
-  includeScreenContext -bool false</code></pre>
-
-      <h3>Let suggestions use the clipboard</h3>
-      <p>Off by default. Items that password managers mark as concealed are skipped either way.</p>
-<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
-  includeClipboard -bool true</code></pre>
-
-      <h3>Never learn from certain apps</h3>
-      <p>Terminals and password managers are always left out. To add more, list them by bundle identifier. The command replaces the previous list, so name every app each time:</p>
-<pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
-  writingExcludedApps -array com.apple.Notes</code></pre>
+      <p>Choose <strong>Settings…</strong> in the menu.</p>
+      <ul>
+        <li><strong>Appearance:</strong> the color of suggestions: gray, a color of your own, a rainbow, or a rainbow that slowly moves along the letters.</li>
+        <li><strong>Suggestions:</strong> longer suggestions; the chat above the text box; the clipboard (what you copied in the last 10 minutes; items that password managers mark as concealed are always skipped).</li>
+        <li><strong>Learning:</strong> learn from your writing, how many messages are kept, <strong>Forget My Writing…</strong>, and apps never to learn in. Terminals and password managers are always left out.</li>
+        <li><strong>Apps:</strong> apps where TypistLocal is off.</li>
+        <li><strong>Privacy:</strong> hide suggestions when the screen is shared or recorded (on by default).</li>
+      </ul>
 
       <h3>Use another model file</h3>
       <p>Any GGUF model file. Quit and reopen the app afterwards.</p>
 <pre><code>defaults write com.coffeetableconsultancy.TypistLocal \
   modelPath ~/Models/other.gguf</code></pre>
 
-      <h3>Undo a setting</h3>
-<pre><code>defaults delete com.coffeetableconsultancy.TypistLocal \
-  includeScreenContext</code></pre>
+      <h3>Undo it</h3>
+<pre><code>defaults delete com.coffeetableconsultancy.TypistLocal modelPath</code></pre>
     </div>
   </section>
 
@@ -189,8 +184,8 @@ Thanks for the update. I'll check this further and come back with my findings.
       <h3>Mid-word suggestions in another language are off</h3>
       <p>Add the language under <strong>System Settings → General → Language &amp; Region</strong>. The app checks unfinished words against your preferred languages.</p>
 
-      <h3>The gray text shows up in screen sharing</h3>
-      <p>It is drawn on screen like any window, so a shared screen or a recording shows it. Press <kbd>Esc</kbd> to hide it, or pause from the menu while you share.</p>
+      <h3>Suggestions in screen sharing</h3>
+      <p>They are left out of shared screens, recordings and screenshots by default. To show them, turn off <strong>Hide suggestions when the screen is shared or recorded</strong> in Settings.</p>
 
       <p>Still stuck? <a href="https://github.com/edouardGT/typistlocal/issues">Open an issue on GitHub</a>.</p>
     </div>

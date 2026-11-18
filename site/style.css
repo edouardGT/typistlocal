@@ -455,6 +455,63 @@ main section:first-child {
   max-width: 600px;
 }
 
+/* Home: what's new */
+
+.badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+.card .demo-line {
+  margin: 12px 0 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+/* The app's rainbow, the same mid tones that read on light and dark. */
+.ghost-rainbow {
+  /* Two rainbows in an image twice the text's width: one is always in view,
+     still or moving. */
+  background: linear-gradient(90deg, #e0524a, #e58a2e, #c79e0d, #40a34d, #299ea3, #4c80e0, #995cd9, #d457a6, #e0524a, #e58a2e, #c79e0d, #40a34d, #299ea3, #4c80e0, #995cd9, #d457a6, #e0524a);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ghost-shimmer {
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ghost-shimmer {
+    animation: none;
+  }
+}
+
+.card .menu-sample {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
 /* Cards and grids */
 
 .grid {

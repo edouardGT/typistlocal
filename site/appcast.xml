@@ -5,6 +5,16 @@
         <description>Updates for TypistLocal</description>
         <language>en</language>
         <item>
+            <title>Version 0.7.0</title>
+            <link>https://github.com/edouardGT/typistlocal/releases/tag/v0.7.0</link>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>0.7.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:fullReleaseNotesLink>https://github.com/edouardGT/typistlocal/releases</sparkle:fullReleaseNotesLink>
+            <pubDate>Wed, 18 Nov 2026 15:47:38 +0000</pubDate>
+            <enclosure url="https://github.com/edouardGT/typistlocal/releases/download/v0.7.0/TypistLocal-0.7.0.dmg" length="6847912" type="application/octet-stream" sparkle:edSignature="pIHvgyp/bjjRm0rFW0wvcKVYmB7eMIrHf3nEZVZJwnGZYMrwx6KvYYOBpOKXAkPHwYNuY8RpECam3HuPNA+eCw=="/>
+        </item>
+        <item>
             <title>Version 0.6.2</title>
             <link>https://github.com/edouardGT/typistlocal/releases/tag/v0.6.2</link>
             <sparkle:version>9</sparkle:version>
